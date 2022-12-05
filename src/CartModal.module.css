@@ -1,0 +1,36 @@
+section {
+  position: relative;
+}
+
+.cartModal {
+  width: 21rem;
+  background: white;
+  position: absolute;
+  top: 3rem;
+  right: -10rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 10px 40px -5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: animaDown 0.3s forwards;
+}
+
+@keyframes animaDown {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
+
+.cartModal h1 {
+  padding: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(171, 178, 191, 0.35);
+}
+
+.cartModal p {
+  text-align: center;
+  padding: 5.5rem 0;
+  font-weight: bold;
+}

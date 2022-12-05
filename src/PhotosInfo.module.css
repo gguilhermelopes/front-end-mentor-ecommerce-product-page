@@ -1,0 +1,116 @@
+.info {
+  padding: 60px 0;
+}
+
+.info h2 {
+  text-transform: uppercase;
+  color: var(--orange);
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  margin-bottom: 30px;
+}
+
+.info h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+.description {
+  color: var(--dark-grayish-blue);
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.prices {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.prices span:first-child {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.prices span:last-child {
+  background: rgba(255, 125, 26, 0.2);
+  color: var(--orange);
+  padding: 5px;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.discount span {
+  display: block;
+  font-weight: bold;
+  color: var(--grayish-blue);
+  text-decoration: line-through;
+  margin-bottom: 45px;
+}
+
+.cart {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.cart p {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 15px 30px;
+  background: var(--light-grayish-blue);
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.cart p svg {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.cart p svg:hover path {
+  fill: rgba(255, 125, 26, 0.8);
+}
+
+.cart p span {
+  width: 2ch;
+  text-align: center;
+}
+
+.cart button {
+  display: flex;
+  align-items: center;
+  background: var(--orange);
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  background: rgba(255, 125, 26, 0.8);
+}
+
+button > svg {
+  margin-right: 20px;
+}
+
+button > svg path {
+  fill: white;
+}
+
+@media (max-width: 1150px) {
+  .cart button {
+    padding: 10px 30px;
+  }
+  button > svg {
+    display: none;
+  }
+}

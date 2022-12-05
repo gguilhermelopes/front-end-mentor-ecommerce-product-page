@@ -1,0 +1,11 @@
+.main {
+  padding: 6rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 110px;
+  align-items: center;
+}
+
+.main img {
+  border-radius: 0.5rem;
+}

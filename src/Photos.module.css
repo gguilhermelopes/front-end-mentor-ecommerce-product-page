@@ -1,0 +1,13 @@
+.photos img {
+  cursor: pointer;
+}
+
+.photoList {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.photoList li img {
+  cursor: pointer;
+}
