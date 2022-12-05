@@ -1,0 +1,82 @@
+.photosModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 2rem;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.photosModalContainer div {
+  display: flex;
+  flex-direction: column;
+  max-width: 32.5rem;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: riseAnima 0.3s forwards;
+  position: relative;
+}
+
+.photosModalContainer div img {
+  cursor: initial;
+}
+
+.close {
+  margin-bottom: 1.5rem;
+  width: 20px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.previous,
+.next {
+  display: block;
+  position: absolute;
+  top: 16.75rem;
+  left: -30px;
+  padding: 1.3rem 1.5rem;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.photosModalContainer div > svg:hover path {
+  stroke: var(--orange);
+}
+
+.next {
+  left: 30.75rem;
+}
+
+.photosModalList {
+  display: flex;
+  max-width: 27.5rem;
+  gap: 15px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: riseAnima 0.3s forwards;
+}
+
+.photosModalList li img {
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+:global(li img.active) {
+  border-color: var(--orange);
+  filter: contrast(0.5) brightness(1.5);
+}
+
+@keyframes riseAnima {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}

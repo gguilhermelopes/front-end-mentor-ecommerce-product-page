@@ -1,7 +1,3 @@
-.photos img {
-  cursor: pointer;
-}
-
 .photoList {
   display: flex;
   margin-top: 2rem;
@@ -10,4 +6,16 @@
 
 .photoList li img {
   cursor: pointer;
+  border: 2px solid transparent;
+}
+
+:global(li img.active) {
+  border-color: var(--orange);
+  filter: contrast(0.5) brightness(1.5);
+}
+
+@media (max-width: 1150px) {
+  .photos {
+    grid-row: 2;
+  }
 }

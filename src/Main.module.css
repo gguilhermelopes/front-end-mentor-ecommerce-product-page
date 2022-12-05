@@ -9,3 +9,10 @@
 .main img {
   border-radius: 0.5rem;
 }
+
+@media (max-width: 1150px) {
+  .main {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+}
