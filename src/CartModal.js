@@ -7,6 +7,7 @@ import { GlobalContext } from "./GlobalContext";
 const CartModal = ({ setCartModal }) => {
   const [addCart, setAddCart] = React.useContext(GlobalContext);
   const setCartQ = React.useContext(GlobalContext)[5];
+  const cartQ = React.useContext(GlobalContext)[4];
 
   const ref = React.useRef(null);
 
@@ -24,7 +25,7 @@ const CartModal = ({ setCartModal }) => {
 
   return (
     <section>
-      {addCart ? (
+      {addCart || cartQ ? (
         <div ref={ref} className={`${styles.cartModal}`}>
           <h1>Cart</h1>
           <div className={styles.cartModalInfo}>
@@ -32,9 +33,9 @@ const CartModal = ({ setCartModal }) => {
             <div className={styles.cartModalText}>
               <p>Fall Limited Edition Sneakers</p>
               <p>
-                <span>$125.00</span> x <span>{addCart}</span>{" "}
+                <span>$125.00</span> x <span>{cartQ}</span>{" "}
                 <span className={styles.finalPrice}>{`$${
-                  125 * addCart
+                  125 * cartQ
                 }.00`}</span>
               </p>
               <Delete

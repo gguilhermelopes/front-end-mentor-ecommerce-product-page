@@ -4,10 +4,12 @@ import { ReactComponent as IconMinus } from "./images/icon-minus.svg";
 import { ReactComponent as IconPlus } from "./images/icon-plus.svg";
 import { ReactComponent as Cart } from "./images/icon-cart.svg";
 import { GlobalContext } from "./GlobalContext";
+import useMedia from "./useMedia";
 
 const PhotosInfo = () => {
   const [addCart, setAddCart, cartModal, setCartModal, cartQ, setCartQ] =
     React.useContext(GlobalContext);
+  const mobile = useMedia("(max-width:60rem)");
 
   function handleCartClick() {
     if (addCart) {
@@ -33,13 +35,13 @@ const PhotosInfo = () => {
         Featuring a durable rubber outer sole, they'll withstand everything the
         weather can offer.
       </p>
+
       <p className={styles.prices}>
         <span>$125.00</span>
         <span>50%</span>
+        <span className={styles.discount}>$250.00</span>
       </p>
-      <p className={styles.discount}>
-        <span>$250.00</span>
-      </p>
+
       <div className={`${styles.cart} unselectable`}>
         <p>
           <IconMinus onClick={handleClickMinus} />

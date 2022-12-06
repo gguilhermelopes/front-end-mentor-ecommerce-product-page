@@ -4,6 +4,8 @@
 
 .photoList {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
   gap: 2rem;
 }
@@ -17,8 +19,21 @@
   filter: contrast(0.5) brightness(1.5);
 }
 
-@media (max-width: 1150px) {
-  .photos {
-    grid-row: 2;
-  }
+.previous,
+.next {
+  display: block;
+  position: absolute;
+  padding: 0.8rem 1rem;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  top: 10rem;
+}
+
+.previous {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
 }

@@ -44,8 +44,7 @@ const PhotosModal = ({
     }
   }
 
-  function handleNext(event) {
-    event.preventDefault();
+  function handleNext() {
     if (+active < photosThumb.length - 1) {
       console.log(photosThumb.length - 1);
       setPhoto(+photo + 1);

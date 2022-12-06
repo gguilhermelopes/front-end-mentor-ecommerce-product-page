@@ -16,3 +16,10 @@
     gap: 55px;
   }
 }
+
+@media (max-width: 60rem) {
+  .main {
+    padding: 0;
+    gap: 10px;
+  }
+}

@@ -24,8 +24,9 @@
 }
 
 .prices {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -33,22 +34,24 @@
 .prices span:first-child {
   font-size: 2rem;
   font-weight: bold;
+  grid-row: 1;
 }
 
-.prices span:last-child {
+.prices span:nth-child(2) {
   background: rgba(255, 125, 26, 0.2);
   color: var(--orange);
   padding: 5px;
   font-weight: bold;
   border-radius: 0.5rem;
+  grid-row: 1;
+  justify-self: start;
 }
 
-.discount span {
+.discount {
   display: block;
   font-weight: bold;
   color: var(--grayish-blue);
   text-decoration: line-through;
-  margin-bottom: 45px;
 }
 
 .cart {
@@ -114,7 +117,34 @@ button > svg path {
   .cart button {
     padding: 10px 30px;
   }
-  button > svg {
-    display: none;
+}
+
+@media (max-width: 60rem) {
+  .info {
+    margin: 20px;
+    padding: 0;
+  }
+  .info h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .prices {
+    display: flex;
+  }
+  .discount {
+    text-align: right;
+    flex: 1;
+  }
+  .cart {
+    display: block;
+  }
+
+  .cart p {
+    justify-content: center;
+  }
+
+  .cart button {
+    width: 100%;
+    justify-content: center;
   }
 }
