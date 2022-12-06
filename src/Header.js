@@ -4,9 +4,11 @@ import logo from "./images/logo.svg";
 import { ReactComponent as Cart } from "./images/icon-cart.svg";
 import profileImage from "./images/image-avatar.png";
 import CartModal from "./CartModal";
+import { GlobalContext } from "./GlobalContext";
 
 const Header = () => {
-  const [cartModal, setCartModal] = React.useState(false);
+  const [addCart, setAddCart, cartModal, setCartModal, cartQ] =
+    React.useContext(GlobalContext);
 
   function handleClick() {
     setCartModal(!cartModal);
@@ -34,8 +36,10 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
       <div className={styles.profile}>
         <Cart onClick={handleClick} />
+        {cartQ > 0 && <span className={styles.cartQ}>{cartQ}</span>}
         {cartModal && (
           <CartModal setCartModal={setCartModal} cartModal={cartModal} />
         )}

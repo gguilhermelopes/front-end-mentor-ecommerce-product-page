@@ -163,3 +163,10 @@ img {
   font-family: "Kumbh Sans", sans-serif;
   margin: 0 5rem;
 }
+
+*.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

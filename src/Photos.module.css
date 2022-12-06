@@ -1,3 +1,7 @@
+.photos img {
+  cursor: pointer;
+}
+
 .photoList {
   display: flex;
   margin-top: 2rem;
@@ -5,7 +9,6 @@
 }
 
 .photoList li img {
-  cursor: pointer;
   border: 2px solid transparent;
 }
 

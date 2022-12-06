@@ -19,18 +19,18 @@ const Photos = () => {
   const photosThumb = [img1Thumb, img2Thumb, img3Thumb, img4Thumb];
 
   function handleClickModal({ currentTarget }) {
-    setPhotoModal(true);
     setPhotoMain(currentTarget.id);
     setActive(currentTarget.id);
   }
 
   return (
-    <section className={styles.photos}>
-      {photoModal ? (
-        <img src={img1} alt="Sneaker" />
-      ) : (
-        <img src={photos[photoMain]} alt="Sneaker" />
-      )}
+    <section className={`${styles.photos} unselectable`}>
+      <img
+        onClick={() => setPhotoModal(true)}
+        src={photos[photoMain]}
+        alt="Sneaker"
+      />
+
       {photoModal && (
         <PhotosModal
           setActiveMain={setActive}
@@ -49,6 +49,7 @@ const Photos = () => {
                 src={photo}
                 alt="Sneaker Thumbnail"
                 onClick={handleClickModal}
+                onDoubleClick={(event) => event.preventDefault()}
               />
             </li>
           );

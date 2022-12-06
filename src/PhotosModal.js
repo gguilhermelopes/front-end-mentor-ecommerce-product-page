@@ -25,22 +25,22 @@ const PhotosModal = ({
   const photosThumb = [img1Thumb, img2Thumb, img3Thumb, img4Thumb];
 
   function handleOutsideClick({ target, currentTarget }) {
-    if (currentTarget === target) setPhotoModal(false);
+    if (currentTarget === target) {
+      setPhotoModal(false);
+      setActiveMain(active);
+      setPhotoMain(photo);
+    }
   }
 
   function handlePhotoClick({ currentTarget }) {
     setPhoto(currentTarget.id);
-    setPhotoMain(currentTarget.id);
     setActive(currentTarget.id);
-    setActiveMain(currentTarget.id);
   }
 
   function handlePrev() {
     if (photo > 0 && photoMain > 0) {
       setPhoto(+photo - 1);
-      setPhotoMain(+photoMain - 1);
       setActive(+active - 1);
-      setActiveMain(+active - 1);
     }
   }
 
@@ -49,9 +49,7 @@ const PhotosModal = ({
     if (+active < photosThumb.length - 1) {
       console.log(photosThumb.length - 1);
       setPhoto(+photo + 1);
-      setPhotoMain(+photoMain + 1);
       setActive(+active + 1);
-      setActiveMain(+active + 1);
     }
   }
 
@@ -61,7 +59,14 @@ const PhotosModal = ({
       className={`${styles.photosModalContainer}`}
     >
       <div>
-        <Close onClick={() => setPhotoModal(false)} className={styles.close} />
+        <Close
+          onClick={() => {
+            setPhotoModal(false);
+            setActiveMain(active);
+            setPhotoMain(photo);
+          }}
+          className={styles.close}
+        />
         <Previous onClick={handlePrev} className={styles.previous} />
         <img src={photos[photo]} alt={`Sneaker ${photo + 1}`} />
         <Next onClick={handleNext} className={styles.next} />

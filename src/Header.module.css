@@ -48,13 +48,30 @@
 .profile {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.cartQ {
+  font-size: 0.675rem;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  left: 13px;
+  color: white;
+  padding: 1px 5px;
+  border-radius: 40%;
+  background: var(--orange);
 }
 
 .profile svg {
   cursor: pointer;
 }
 
-.profile img {
+.profile svg:hover path {
+  fill: var(--orange);
+}
+
+.profile img:last-child {
   width: 50px;
   border: 2px solid transparent;
   border-radius: 50%;
@@ -72,5 +89,6 @@
   top: 0;
   right: 0;
   height: 100%;
-  width: 100vw;
+  min-width: 100vw;
+  z-index: 8;
 }

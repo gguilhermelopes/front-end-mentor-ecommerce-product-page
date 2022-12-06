@@ -3,9 +3,18 @@ import styles from "./PhotosInfo.module.css";
 import { ReactComponent as IconMinus } from "./images/icon-minus.svg";
 import { ReactComponent as IconPlus } from "./images/icon-plus.svg";
 import { ReactComponent as Cart } from "./images/icon-cart.svg";
+import { GlobalContext } from "./GlobalContext";
 
 const PhotosInfo = () => {
-  const [addCart, setAddCart] = React.useState(0);
+  const [addCart, setAddCart, cartModal, setCartModal, cartQ, setCartQ] =
+    React.useContext(GlobalContext);
+
+  function handleCartClick() {
+    if (addCart) {
+      setCartModal(true);
+      setCartQ(addCart);
+    }
+  }
 
   function handleClickMinus() {
     if (addCart > 0) setAddCart(addCart - 1);
@@ -31,15 +40,21 @@ const PhotosInfo = () => {
       <p className={styles.discount}>
         <span>$250.00</span>
       </p>
-      <div className={styles.cart}>
+      <div className={`${styles.cart} unselectable`}>
         <p>
           <IconMinus onClick={handleClickMinus} />
           <span>{addCart}</span>
           <IconPlus onClick={handleClickPlus} />
         </p>
-        <button>
-          <Cart /> Add to cart
-        </button>
+        {addCart ? (
+          <button onClick={handleCartClick}>
+            <Cart /> Add to cart
+          </button>
+        ) : (
+          <button disabled>
+            <Cart /> Add to cart
+          </button>
+        )}
       </div>
     </section>
   );

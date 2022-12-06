@@ -29,8 +29,65 @@ section {
   border-bottom: 1px solid rgba(171, 178, 191, 0.35);
 }
 
-.cartModal p {
+.cartModalInfo {
+  display: grid;
+  padding: 1.5rem;
+  grid-template-columns: 2fr 7fr;
+  color: var(--dark-grayish-blue);
+  gap: 1rem;
+}
+
+.cartModalInfo img {
+  border-radius: 0.3rem;
+  align-self: center;
+}
+
+.btn {
+  grid-column: 1/-1;
   text-align: center;
-  padding: 5.5rem 0;
+  background: var(--orange);
+  color: white;
   font-weight: bold;
+  font-size: 0.875rem;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(255, 125, 26, 0.8);
+}
+
+.cartModalText {
+  line-height: 1.7;
+  font-size: 0.875rem;
+  position: relative;
+  align-self: center;
+}
+
+.delete {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: -5px;
+  top: 22.5px;
+}
+
+.cartModalText svg:hover path {
+  fill: var(--orange);
+}
+
+.finalPrice {
+  font-weight: bold;
+  color: black;
+}
+
+.empty {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: var(--dark-grayish-blue);
+  padding: 5rem 0;
 }
