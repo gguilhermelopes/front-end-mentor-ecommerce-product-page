@@ -31,14 +31,19 @@ const Photos = () => {
     if (photoMain > 0) {
       setPhotoMain(+photoMain - 1);
       setActive(+active - 1);
+    } else if (+photoMain === 0) {
+      setPhotoMain(+photosThumb.length - 1);
+      setActive(+photosThumb.length - 1);
     }
   }
 
   function handleNext() {
     if (+active < photosThumb.length - 1) {
-      console.log(photosThumb.length - 1);
       setPhotoMain(+photoMain + 1);
       setActive(+active + 1);
+    } else if (+photoMain === +photosThumb.length - 1) {
+      setPhotoMain(0);
+      setActive(0);
     }
   }
 
@@ -46,7 +51,9 @@ const Photos = () => {
     <section className={`${styles.photos} unselectable`}>
       {mobile && <Previous onClick={handlePrev} className={styles.previous} />}
       <img
-        onClick={() => setPhotoModal(true)}
+        onClick={() => {
+          setPhotoModal(true);
+        }}
         src={photos[photoMain]}
         alt="Sneaker"
       />
@@ -57,6 +64,8 @@ const Photos = () => {
           setPhotoModal={setPhotoModal}
           setPhotoMain={setPhotoMain}
           photoMain={photoMain}
+          setActive={setActive}
+          active={active}
         />
       )}
       {!mobile && (
@@ -70,7 +79,6 @@ const Photos = () => {
                   src={photo}
                   alt="Sneaker Thumbnail"
                   onClick={handleClickModal}
-                  onDoubleClick={(event) => event.preventDefault()}
                 />
               </li>
             );

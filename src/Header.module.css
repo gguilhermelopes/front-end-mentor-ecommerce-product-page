@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
+  padding: 50px 20px;
   box-shadow: 0px 1px 0px 0px rgba(171, 178, 191, 0.35);
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .nav {

@@ -4,12 +4,10 @@ import { ReactComponent as IconMinus } from "./images/icon-minus.svg";
 import { ReactComponent as IconPlus } from "./images/icon-plus.svg";
 import { ReactComponent as Cart } from "./images/icon-cart.svg";
 import { GlobalContext } from "./GlobalContext";
-import useMedia from "./useMedia";
 
 const PhotosInfo = () => {
   const [addCart, setAddCart, cartModal, setCartModal, cartQ, setCartQ] =
     React.useContext(GlobalContext);
-  const mobile = useMedia("(max-width:60rem)");
 
   function handleCartClick() {
     if (addCart) {

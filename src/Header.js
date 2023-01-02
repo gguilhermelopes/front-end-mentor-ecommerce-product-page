@@ -26,7 +26,7 @@ const Header = () => {
   }
 
   return (
-    <header className={`${styles.header} container`}>
+    <header className={`${styles.header}`}>
       {mobileMenu && <div className={styles.mobileBackground}></div>}
       <nav className={styles.nav}>
         {mobile && (

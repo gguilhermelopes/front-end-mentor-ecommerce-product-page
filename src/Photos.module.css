@@ -27,13 +27,13 @@
   background: white;
   border-radius: 50%;
   cursor: pointer;
-  top: 10rem;
+  top: 11rem;
 }
 
 .previous {
-  left: 5px;
+  left: 0px;
 }
 
 .next {
-  right: 5px;
+  right: 0px;
 }

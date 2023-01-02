@@ -17,9 +17,10 @@ const PhotosModal = ({
   photoMain,
   setPhotoMain,
   setActiveMain,
+  setActive,
+  active,
 }) => {
   const [photo, setPhoto] = React.useState(photoMain);
-  const [active, setActive] = React.useState(photoMain);
 
   const photos = [img1, img2, img3, img4];
   const photosThumb = [img1Thumb, img2Thumb, img3Thumb, img4Thumb];
@@ -35,20 +36,26 @@ const PhotosModal = ({
   function handlePhotoClick({ currentTarget }) {
     setPhoto(currentTarget.id);
     setActive(currentTarget.id);
+    console.log(currentTarget.id);
   }
 
   function handlePrev() {
-    if (photo > 0 && photoMain > 0) {
+    if (photo > 0) {
       setPhoto(+photo - 1);
       setActive(+active - 1);
+    } else if (+photo === 0) {
+      setPhoto(+photosThumb.length - 1);
+      setActive(+photosThumb.length - 1);
     }
   }
 
   function handleNext() {
     if (+active < photosThumb.length - 1) {
-      console.log(photosThumb.length - 1);
       setPhoto(+photo + 1);
       setActive(+active + 1);
+    } else if (+photo === +photosThumb.length - 1) {
+      setPhoto(0);
+      setActive(0);
     }
   }
 
